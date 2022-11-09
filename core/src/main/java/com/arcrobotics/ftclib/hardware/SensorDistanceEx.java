@@ -74,7 +74,7 @@ public interface SensorDistanceEx extends SensorDistance {
          */
         public boolean atTarget(double currentDistance) {
             currentDistance = unit.fromUnit(unit, currentDistance);
-            double clippedRange = Range.clip(currentDistance, currentDistance - threshold, currentDistance + threshold);
+            double clippedRange = Range.clip(currentDistance, target - threshold, target + threshold);
             if (currentDistance > clippedRange)
                 return false;
             else return !(currentDistance < clippedRange);
